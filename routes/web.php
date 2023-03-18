@@ -35,4 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('stuff')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/stripes', function () {
+        echo "Admin page with stripes";
+    });
+});
+
+
 require __DIR__.'/auth.php';

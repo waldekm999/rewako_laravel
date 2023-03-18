@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
     ];
 
     /**
@@ -40,5 +41,24 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean',
     ];
+
+    protected $is_admin = false;
+
+
+    /*
+
+        $user = User::find(1);
+
+        if ($user->is_admin) {
+            // do something for admins
+        } else {
+            // do something for non-admins
+        }
+
+
+    */
+    
+
 }
