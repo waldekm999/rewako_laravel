@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,9 +37,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('stuff')->middleware(['auth', 'admin'])->group(function () {
-    Route::get('/stripes', function () {
-        echo "Admin page with stripes";
-    });
+    Route::get('/stripes', [StripeController::class, 'index']
+        )->name('stripes.index');
+    Route::get('/stripes/add', [StripeController::class,'create']
+        )->name('stripes.add');
+    Route::post('/stripes/store', [StripeController::class,'store']
+        )->name('stripes.store');
+        
 });
 
 
