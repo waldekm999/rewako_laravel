@@ -8,11 +8,12 @@ import { Link } from '@inertiajs/react';
 export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
-    console.log(auth);
+    /*console.log(auth);
 
     if(auth.user.is_admin) {
         console.log("jestem adminem");
     }
+    */
 
     return (
         <div className="min-h-screen bg-gray-100">

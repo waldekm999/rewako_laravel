@@ -17,18 +17,10 @@ class StripeController extends Controller
      */
     public function index(StripeRepository $stripeRepo, Request $request): Response
     {
-        $stripesList = $stripeRepo->getAll();   
-        
-        if($request->user()->is_admin) {
-            echo "Jestem adminem";
-        } else {
-            echo "Nie jestem adminem";
-        }
-        
-        die();
+        $stripesList = $stripeRepo->getAll();
 
         return Inertia::render('Stripes/Index', [
-
+            'stripes' => $stripesList,
         ])  ;      
     }
 

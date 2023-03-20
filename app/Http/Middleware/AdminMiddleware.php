@@ -19,6 +19,7 @@ class AdminMiddleware
             return $next($request);
         }
 
-        abort(404, 'Podana strona nie istnieje');        
+        //abort(404, 'Podana strona nie istnieje');     
+        return redirect('dashboard');   
     }
 }
