@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Stripe;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,7 @@ Route::prefix('stuff')->middleware(['auth', 'admin'])->group(function () {
     Route::post('/stripes/store', [StripeController::class,'store']
         )->name('stripes.store');
     Route::get('stripes/{stripe}', [StripeController::class, 'show']
-        )->name('stripes.edit');        
+        )->name('stripes.edit');               
 });
 
 

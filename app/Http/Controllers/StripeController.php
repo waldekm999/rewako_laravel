@@ -60,7 +60,12 @@ class StripeController extends Controller
      */
     public function show(Stripe $stripe)
     {
-        //
+        $stripe = $stripe;
+
+        return Inertia::render('Stripes/Edit', [
+            'stripe' => $stripe,
+        ])  ; 
+
     }
 
     /**
