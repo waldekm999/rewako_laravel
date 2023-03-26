@@ -17,7 +17,7 @@ export default function Authenticated({ auth, header, children }) {
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
+                                </Link>                                
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -26,7 +26,7 @@ export default function Authenticated({ auth, header, children }) {
                                 </NavLink>
                                 <NavLink href={route('stripes.index')} active={route().current('stripes.index')}>
                                     Pasy
-                                </NavLink>
+                                </NavLink>                                
                             </div>
                         </div>
 

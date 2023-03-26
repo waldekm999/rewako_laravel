@@ -46,7 +46,8 @@ Route::prefix('stuff')->middleware(['auth', 'admin'])->group(function () {
         )->name('stripes.add');
     Route::post('/stripes/store', [StripeController::class,'store']
         )->name('stripes.store');
-        
+    Route::get('stripes/{stripe}', [StripeController::class, 'show']
+        )->name('stripes.edit');        
 });
 
 
